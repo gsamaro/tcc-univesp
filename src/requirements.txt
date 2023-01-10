@@ -16,6 +16,8 @@ pandas
 numpy
 matplotlib
 seaborn
+plotly
 pyomo
 keras
 scikit-learn
+mitosheet
