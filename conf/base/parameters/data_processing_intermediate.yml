@@ -1,0 +1,15 @@
+# This is a boilerplate parameters config generated for pipeline 'data_processing_intermediate'
+# using Kedro 0.18.4.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://kedro.readthedocs.io/en/0.18.4/kedro_project_setup/configuration.html#parameters
+
+col_to_select:
+  - NU_INSCRICAO
+  - TP_ST_CONCLUSAO
+  - IN_TREINEIRO
+  - CO_MUNICIPIO_ESC
+  - TP_PRESENCA_MT
+  - TP_ESCOLA
+  - TP_ENSINO
+  - NU_NOTA_MT
