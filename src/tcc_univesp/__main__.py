@@ -44,4 +44,13 @@ def main(*args, **kwargs):
 
 
 if __name__ == "__main__":
+    import os
+    import sys
+    from pathlib import Path
+
+    project_path = str(Path(__file__).parent.resolve())
+
+    if "PYTHONPATH" not in os.environ:
+        os.environ["PYTHONPATH"] = project_path
+    sys.path.append(project_path)
     main()

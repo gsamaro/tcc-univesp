@@ -21,3 +21,5 @@ pyomo
 keras
 scikit-learn
 mitosheet
+openpyxl
+xlsxwriter
