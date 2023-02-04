@@ -1,0 +1,12 @@
+# This is a boilerplate parameters config generated for pipeline 'data_processing_primary'
+# using Kedro 0.18.4.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://kedro.readthedocs.io/en/0.18.4/kedro_project_setup/configuration.html#parameters
+
+number_of_sample: 5000
+sample_size: 1000
+year_2021: 2021
+year_2020: 2020
+year_2019: 2019
+year_2018: 2018
