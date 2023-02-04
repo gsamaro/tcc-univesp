@@ -48,3 +48,6 @@ def build_sample_and_means(df: pd.DataFrame, number_of_sample: int, sample_size:
             ]).reshape(2, -1).T,
         columns=[f"mean_{year}_publica", f"mean_{year}_privado"]
     )
+
+def assemble_samples(df: pd.DataFrame, new_df: pd.DataFrame):
+    return pd.concat([df, new_df], axis=1)
