@@ -4,7 +4,11 @@ generated using Kedro 0.18.4
 """
 
 from kedro.pipeline import Pipeline, node, pipeline
-from .nodes import build_sample_and_means, assemble_samples
+from .nodes import (
+    build_sample_and_means,
+    assemble_samples,
+    build_adjusted_df
+)
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -73,5 +77,15 @@ def create_pipeline(**kwargs) -> Pipeline:
                 ],
                 outputs="sample_all_years"
         ),
+        node(
+            func=build_adjusted_df,
+            inputs=[
+                "sample_MICRODADOS_ENEM_2021",
+                "sample_MICRODADOS_ENEM_2020",
+                "sample_MICRODADOS_ENEM_2019",
+                "sample_MICRODADOS_ENEM_2018"
+            ],
+            outputs="sample_all_year_adjusted"
+        )
     ],
     tags="pipeline_de")
