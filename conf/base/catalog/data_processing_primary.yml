@@ -1,0 +1,39 @@
+sample_MICRODADOS_ENEM_2021:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/sample_MICRODADOS_ENEM_2021.csv
+  load_args:
+    encoding: "ISO-8859-1"
+  save_args:
+    index: False
+    date_format: '%Y-%m-%d %H:%M'
+    decimal: .
+
+sample_MICRODADOS_ENEM_2020:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/sample_MICRODADOS_ENEM_2020.csv
+  load_args:
+    encoding: "ISO-8859-1"
+  save_args:
+    index: False
+    date_format: '%Y-%m-%d %H:%M'
+    decimal: .
+
+sample_MICRODADOS_ENEM_2019:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/sample_MICRODADOS_ENEM_2019.csv
+  load_args:
+    encoding: "ISO-8859-1"
+  save_args:
+    index: False
+    date_format: '%Y-%m-%d %H:%M'
+    decimal: .
+
+sample_MICRODADOS_ENEM_2018:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/sample_MICRODADOS_ENEM_2018.csv
+  load_args:
+    encoding: "ISO-8859-1"
+  save_args:
+    index: False
+    date_format: '%Y-%m-%d %H:%M'
+    decimal: .
