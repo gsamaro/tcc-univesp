@@ -51,3 +51,29 @@ def build_sample_and_means(df: pd.DataFrame, number_of_sample: int, sample_size:
 
 def assemble_samples(df: pd.DataFrame, new_df: pd.DataFrame):
     return pd.concat([df, new_df], axis=1)
+
+def _adjust_df(df: pd.DataFrame) -> pd.DataFrame:
+    df1 = df[[df.columns[0]]].copy()
+    col_name_splited = str(df1.columns[0]).split("_")
+    year = col_name_splited[1]
+    school_flag = col_name_splited[2]
+    df1["ano"] = year
+    df1["tp_escola"] = school_flag
+    df1.rename(columns={str(df1.columns[0]): "mean"}, inplace=True)
+
+    df2 = df[[df.columns[1]]].copy()
+    col_name_splited = str(df2.columns[0]).split("_")
+    year = col_name_splited[1]
+    school_flag = col_name_splited[2]
+    df2["ano"] = year
+    df2["tp_escola"] = school_flag
+    df2.rename(columns={str(df2.columns[0]): "mean"}, inplace=True)
+
+    return pd.concat([df1, df2])
+
+def build_adjusted_df(df_2021: pd.DataFrame, df_2020: pd.DataFrame, df_2019: pd.DataFrame, df_2018: pd.DataFrame) -> pd.DataFrame:
+    df_2021_adjusted = _adjust_df(df_2021)
+    df_2020_adjusted = _adjust_df(df_2020)
+    df_2019_adjusted = _adjust_df(df_2019)
+    df_2018_adjusted = _adjust_df(df_2018)
+    return pd.concat([df_2021_adjusted, df_2020_adjusted, df_2019_adjusted, df_2018_adjusted], ignore_index=True)
