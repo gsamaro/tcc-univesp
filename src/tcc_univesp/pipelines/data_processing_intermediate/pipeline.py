@@ -4,7 +4,11 @@ generated using Kedro 0.18.4
 """
 
 from kedro.pipeline import Pipeline, node, pipeline
-from .nodes import concat_all_enem_years
+from .nodes import (
+    concat_all_enem_years,
+    get_pib,
+    get_municipios
+)
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -36,6 +40,24 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "params:col_to_select"
                 ],
                 outputs="MICRODADOS_ENEM"
-            )
+            ),
+            node(
+                func=get_pib,
+                inputs=[
+                    "raw_pib",
+                    "params:select_cols_pib"
+                ],
+                outputs="int_pib",
+                name="get_pib"
+            ),
+            node(
+                func=get_municipios,
+                inputs=[
+                    "raw_cod_municipios",
+                    "params:select_cols_municipios"
+                ],
+                outputs="int_municipios",
+                name="get_municipios"
+            ),
     ],
     tags="pipeline_de")

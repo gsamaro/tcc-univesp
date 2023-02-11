@@ -14,3 +14,14 @@ col_to_select:
   - TP_ESCOLA
   - TP_ENSINO
   - NU_NOTA_MT
+
+select_cols_pib:
+  - id_municipio
+  - ano
+  - pib
+
+select_cols_municipios:
+  - Código Município Completo
+  - Nome_Município
+  - Nome_UF
+  - UF

@@ -1,3 +1,9 @@
 raw_pib:
   type: tcc_univesp.extras.datasets.bd_dataset.BdDataset
   filepath: data/01_raw/raw_pib
+
+raw_cod_municipios:
+  type: pandas.ExcelDataSet
+  filepath: data/01_raw/RELATORIO_DTB_BRASIL_MUNICIPIO.xlsx
+  load_args:
+    engine: openpyxl

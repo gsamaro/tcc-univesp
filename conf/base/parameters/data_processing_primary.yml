@@ -10,3 +10,7 @@ year_2021: 2021
 year_2020: 2020
 year_2019: 2019
 year_2018: 2018
+
+join_pib_municipios:
+  left_on_pib: id_municipio
+  right_on_municipios: Código Município Completo

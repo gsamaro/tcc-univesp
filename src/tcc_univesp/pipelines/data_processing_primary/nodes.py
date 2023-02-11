@@ -77,3 +77,10 @@ def build_adjusted_df(df_2021: pd.DataFrame, df_2020: pd.DataFrame, df_2019: pd.
     df_2019_adjusted = _adjust_df(df_2019)
     df_2018_adjusted = _adjust_df(df_2018)
     return pd.concat([df_2021_adjusted, df_2020_adjusted, df_2019_adjusted, df_2018_adjusted], ignore_index=True)
+
+def join_pib_municipios(
+    df_pib: pd.DataFrame, 
+    df_municipios: pd.DataFrame,
+    parameters
+    ) -> pd.DataFrame:
+    return pd.merge(df_pib, df_municipios, left_on=parameters["left_on_pib"], right_on=parameters["right_on_municipios"])

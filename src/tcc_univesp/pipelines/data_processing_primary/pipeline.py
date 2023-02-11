@@ -7,12 +7,14 @@ from kedro.pipeline import Pipeline, node, pipeline
 from .nodes import (
     build_sample_and_means,
     assemble_samples,
-    build_adjusted_df
+    build_adjusted_df,
+    join_pib_municipios,
 )
 
 
 def create_pipeline(**kwargs) -> Pipeline:
-    return pipeline([
+    return pipeline(
+    [
         node(
                 func=build_sample_and_means,
                 inputs=[
@@ -86,6 +88,16 @@ def create_pipeline(**kwargs) -> Pipeline:
                 "sample_MICRODADOS_ENEM_2018"
             ],
             outputs="sample_all_year_adjusted"
-        )
+        ),
+        node(
+            func=join_pib_municipios,
+            inputs=[
+                "int_pib",
+                "int_municipios",
+                "params:join_pib_municipios",
+            ],
+            outputs="pri_pib",
+            name="join_pib_municipios"
+        ),
     ],
     tags="pipeline_de")
