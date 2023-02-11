@@ -50,3 +50,15 @@ MICRODADOS_ENEM_2021_2019:
   type: MemoryDataSet
 MICRODADOS_ENEM_2021_2020:
   type: MemoryDataSet
+
+int_pib:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/int_pib.csv
+
+int_municipios:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/int_municipios.csv
+  load_args:
+    encoding: latin1
+  save_args:
+    encoding: latin1
