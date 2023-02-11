@@ -1,0 +1,3 @@
+raw_pib:
+  type: tcc_univesp.extras.datasets.bd_dataset.BdDataset
+  filepath: data/01_raw/raw_pib
