@@ -1,0 +1,2 @@
+spark.driver.maxResultSize: 6g
+spark.scheduler.mode: FAIR

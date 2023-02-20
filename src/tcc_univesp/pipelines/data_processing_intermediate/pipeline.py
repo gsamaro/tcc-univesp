@@ -21,7 +21,8 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "MICRODADOS_ENEM_2020",
                     "params:col_to_select"
                 ],
-                outputs="MICRODADOS_ENEM_2021_2020"
+                outputs="MICRODADOS_ENEM_2021_2020",
+                tags="pipeline_microdados_enem"
             ),
             node(
                 func=concat_all_enem_years,
@@ -30,7 +31,8 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "MICRODADOS_ENEM_2019",
                     "params:col_to_select"
                 ],
-                outputs="MICRODADOS_ENEM_2021_2019"
+                outputs="MICRODADOS_ENEM_2021_2019",
+                tags="pipeline_microdados_enem"
             ),
             node(
                 func=concat_all_enem_years,
@@ -39,7 +41,8 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "MICRODADOS_ENEM_2018",
                     "params:col_to_select"
                 ],
-                outputs="MICRODADOS_ENEM"
+                outputs="MICRODADOS_ENEM@pandas",
+                tags="pipeline_microdados_enem"
             ),
             node(
                 func=get_pib,

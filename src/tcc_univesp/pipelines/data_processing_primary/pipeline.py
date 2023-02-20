@@ -18,7 +18,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
                 func=build_sample_and_means,
                 inputs=[
-                    "MICRODADOS_ENEM",                    
+                    "MICRODADOS_ENEM@pandas",                    
                     "params:number_of_sample",
                     "params:sample_size",
                     "params:year_2021"
@@ -28,7 +28,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
                 func=build_sample_and_means,
                 inputs=[
-                    "MICRODADOS_ENEM",                    
+                    "MICRODADOS_ENEM@pandas",                    
                     "params:number_of_sample",
                     "params:sample_size",
                     "params:year_2020"
@@ -38,7 +38,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
                 func=build_sample_and_means,
                 inputs=[
-                    "MICRODADOS_ENEM",                    
+                    "MICRODADOS_ENEM@pandas",                    
                     "params:number_of_sample",
                     "params:sample_size",
                     "params:year_2019"
@@ -48,7 +48,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
                 func=build_sample_and_means,
                 inputs=[
-                    "MICRODADOS_ENEM",                    
+                    "MICRODADOS_ENEM@pandas",                    
                     "params:number_of_sample",
                     "params:sample_size",
                     "params:year_2018"
